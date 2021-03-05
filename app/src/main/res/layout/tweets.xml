@@ -7,62 +7,62 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     >
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="5dp"
-    android:layout_marginTop="10dp"
-    android:layout_marginEnd="5dp"
-    android:layout_marginBottom="10dp">
 
-    <ImageView
-        android:id="@+id/ivProfile"
-        android:layout_width="60dp"
-        android:layout_height="70dp"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/tvName"
-        android:layout_width="200dp"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        android:layout_toEndOf="@+id/ivProfile"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        tools:text="shrutiTech"
-        tools:visibility="visible" />
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp">
 
-    <TextView
-        android:id="@+id/tvBody"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvName"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_toEndOf="@+id/ivProfile"
-        android:autoLink="all"
-        android:textSize="16sp"
-        tools:text="This is my tweet!" />
+        <ImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="60dp"
+            android:layout_height="70dp"
+            tools:srcCompat="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/tvTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="3dp"
-        android:textColor="#767373"
-        android:textSize="12sp"
-        tools:text="1 hour ago" />
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/ivProfile"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="shrutiTech"
+            tools:visibility="visible" />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/tvBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvName"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/ivProfile"
+            android:autoLink="all"
+            android:textSize="16sp"
+            tools:text="This is my tweet!" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="3dp"
+            android:textColor="#767373"
+            android:textSize="12sp"
+            tools:text="1 hour ago" />
+
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="2"
-        >
+        android:weightSum="2">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -83,6 +83,7 @@
             android:backgroundTint="#FF9100"
             android:clickable="true"
             android:src="@drawable/share" />
+
     </LinearLayout>
 
     <View

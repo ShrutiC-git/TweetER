@@ -40,6 +40,8 @@ public class TimelineActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
 
+        getSupportActionBar().setLogo(R.drawable.twitter_bird);
+
         client = TwitterClientApp.getRestClient(TimelineActivity.this);
 
         swipeContainer = findViewById(R.id.swipeContainer);

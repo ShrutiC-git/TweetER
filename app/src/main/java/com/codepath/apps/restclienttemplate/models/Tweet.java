@@ -16,6 +16,7 @@ public class Tweet {
     public User user;
     public long id;
 
+
     public static Tweet fromJSONObject(JSONObject jsonObject) throws JSONException {
         Tweet tweet = new Tweet();
 
