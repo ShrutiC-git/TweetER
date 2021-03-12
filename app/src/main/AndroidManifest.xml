@@ -13,7 +13,16 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
-        <activity android:name=".IndividualTweet"></activity>
+        <activity android:name=".ReplyActivity">
+        </activity>
+        <activity android:name=".ComposeActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"></data>
+            </intent-filter>
+        </activity>
+        <activity android:name=".IndividualTweet" />
         <activity android:name=".TimelineActivity" />
         <activity
             android:name=".LoginActivity"

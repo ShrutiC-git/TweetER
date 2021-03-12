@@ -1,7 +1,9 @@
 package com.codepath.apps.restclienttemplate;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,15 +26,28 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
     List<Tweet> tweets;
     Context context;
 
+
+    public static final int REGULAR = 0;
+    public static final int IMAGE = 1;
+
     private OnItemClickListener listener;
+
+
 
     public TweetsAdapter(List<Tweet> tweets, Context context) {
         this.tweets = tweets;
         this.context = context;
     }
 
+
+    @Override
+    public int getItemViewType(int position) {
+        return super.getItemViewType(position);
+    }
+
     public interface OnItemClickListener{
         void onItemClick(View itemView, int position);
+        void onItemReply(View itemView, int position);
     }
 
     public void setOnItemClickListener(OnItemClickListener listener){
@@ -79,12 +94,14 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvBody, tvName, tvTime;
         ImageView ivProfile;
+        ImageView ivReply;
         public ViewHolder(@NonNull final View itemView) {
             super(itemView);
             tvBody = itemView.findViewById(R.id.tvBody);
             tvName = itemView.findViewById(R.id.tvName);
             ivProfile = itemView.findViewById(R.id.ivProfile);
             tvTime = itemView.findViewById(R.id.tvTime);
+            ivReply = itemView.findViewById(R.id.ivReply);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -93,6 +110,15 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
                         int position = getAdapterPosition();
                         listener.onItemClick(itemView, position);
                     }
+                }
+            });
+
+            ivReply.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context,ReplyActivity.class);
+                    int position = getAdapterPosition();
+                    listener.onItemReply(itemView,position);
                 }
             });
         }
